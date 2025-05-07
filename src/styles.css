@@ -1,0 +1,511 @@
+body {
+  background-color: black;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  /* Styles for smartphones (portrait) */
+  .page-one {
+    flex-direction: column;
+    margin-top: 20vh;
+  }
+
+  .bio,
+  .socials:nth-child(1),
+  .address {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+}
+
+/* Tablet/Laptop */
+@media (max-width: 1200px) {
+  body {
+    overflow-x: hidden;
+  }
+  .page-one {
+    flex-direction: column;
+    padding-top: 20vh;
+  }
+  .about {
+    flex-shrink: 1;
+    max-width: 100%;
+  }
+
+  .footer-container {
+    justify-content: center;
+  }
+
+  footer {
+    padding-bottom: 5vh;
+  }
+
+  .bg-light {
+    /* padding-right: 100vw; */
+  }
+
+  .bg-light-2 {
+    padding-left: 100vw;
+    padding-top: 20vh;
+    padding-bottom: 50vh;
+  }
+
+  .bg-light-3 {
+    padding-top: -80vh;
+  }
+}
+
+@media (max-width: 1300px) {
+  .footer-container {
+    justify-content: center;
+  }
+
+  .bg-light {
+    padding-right: 100vw;
+  }
+
+  footer {
+    padding-bottom: 5vh;
+  }
+}
+
+.bg-light {
+  width: 100vw;
+  height: 180vh;
+  position: absolute;
+  transform: translateY(-45%) translateX(-50vw);
+  z-index: -1;
+  overflow: hidden;
+}
+
+.bg-light::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #003153;
+  background: radial-gradient(
+    circle,
+    rgba(0, 49, 83, 1) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.bg-light-2 {
+  width: 100vw;
+  height: 120vh;
+  position: absolute;
+  transform: translateY(50%) translateX(50vw);
+  z-index: -1;
+  overflow: hidden;
+}
+
+.bg-light-2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #996300;
+  background: radial-gradient(
+    circle,
+    rgba(153, 99, 0, 1) 0%,
+    rgba(0, 0, 0, 0) 50%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.bg-light-3 {
+  width: 100vw;
+  height: 120vh;
+  position: absolute;
+  transform: translateY(0) translateX(0);
+  z-index: -1;
+  overflow: hidden;
+}
+
+.bg-light-3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  background: #b8006e;
+  background: radial-gradient(
+    circle,
+    rgba(184, 0, 110, 1) 0%,
+    rgba(0, 0, 0, 0) 50%
+  );
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.bg-light-3.active::before,
+.bg-light-2.active::before,
+.bg-light.active::before {
+  opacity: 1;
+}
+
+.page-one {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  gap: 70px;
+  transform: translateY(-20%);
+}
+
+header {
+  transform: translateY(10%);
+  flex: 0 0 auto;
+}
+
+/* profile picture and name / PAGE 1 */
+.profile-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+}
+header {
+  position: relative;
+  overflow: hidden;
+  position: relative;
+}
+
+.full-name {
+  position: absolute;
+  margin: 0;
+  font-size: xx-large;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+}
+
+.full-name span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform-origin: 0 200px;
+  animation: spin 10000ms;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(var(--start-rotation)) rotate(0turn);
+  }
+  to {
+    transform: rotate(var(--start-rotation)) rotate(1turn);
+  }
+}
+
+/* Jamie Pham */
+.full-name span:nth-child(1) {
+  --start-rotation: 332deg;
+}
+.full-name span:nth-child(2) {
+  --start-rotation: 339deg;
+}
+.full-name span:nth-child(3) {
+  --start-rotation: 346deg;
+}
+.full-name span:nth-child(4) {
+  --start-rotation: 356deg;
+}
+.full-name span:nth-child(5) {
+  --start-rotation: 0deg;
+}
+.full-name span:nth-child(6) {
+  --start-rotation: 10deg;
+}
+.full-name span:nth-child(7) {
+  --start-rotation: 17deg;
+}
+.full-name span:nth-child(8) {
+  --start-rotation: 24deg;
+}
+.full-name span:nth-child(9) {
+  --start-rotation: 31deg;
+}
+/* Fullstack Developer */
+.full-name span:nth-child(10) {
+  --start-rotation: 130deg;
+} /* F */
+.full-name span:nth-child(11) {
+  --start-rotation: 137deg;
+} /* U */
+.full-name span:nth-child(12) {
+  --start-rotation: 144deg;
+} /* L */
+.full-name span:nth-child(13) {
+  --start-rotation: 147deg;
+} /* L */
+.full-name span:nth-child(14) {
+  --start-rotation: 150deg;
+} /* S */
+.full-name span:nth-child(15) {
+  --start-rotation: 157deg;
+} /* T */
+.full-name span:nth-child(16) {
+  --start-rotation: 161deg;
+} /* A */
+.full-name span:nth-child(17) {
+  --start-rotation: 168deg;
+} /* C */
+.full-name span:nth-child(18) {
+  --start-rotation: 175deg;
+} /* K */
+.full-name span:nth-child(19) {
+  --start-rotation: 185deg;
+} /* (space) */
+.full-name span:nth-child(20) {
+  --start-rotation: 192deg;
+} /* D */
+.full-name span:nth-child(21) {
+  --start-rotation: 199deg;
+} /* E */
+.full-name span:nth-child(22) {
+  --start-rotation: 206deg;
+} /* V */
+.full-name span:nth-child(23) {
+  --start-rotation: 213deg;
+} /* L */
+.full-name span:nth-child(24) {
+  --start-rotation: 217deg;
+} /* O */
+.full-name span:nth-child(25) {
+  --start-rotation: 224deg;
+} /* P */
+.full-name span:nth-child(26) {
+  --start-rotation: 231deg;
+} /* E */
+.full-name span:nth-child(27) {
+  --start-rotation: 238deg;
+} /* R */
+
+.profile-pic {
+  width: 300px;
+  height: 300px;
+  background-color: blue;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Profile Description */
+.about {
+  flex: 0 0 auto;
+  width: 600px;
+  font-size: x-large;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  transform: translateY(10%);
+}
+
+.socials {
+  display: flex;
+  gap: 25px;
+  padding-left: 1%;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 6px;
+  transition:
+    transform 0.25s ease-in,
+    background-color 0.25s ease-in;
+}
+
+.linkedin {
+  transition: none;
+  height: 20px;
+}
+
+.instagram {
+  height: 20px;
+  transition: none;
+}
+
+.github {
+  height: 20px;
+  transition: none;
+}
+
+.link:hover {
+  transform: scale(1.25);
+  background-color: chartreuse;
+}
+
+/* Page 2 - Projects */
+.page-two {
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 35vh;
+  padding-top: 5vh;
+  /* height: 100vh; */
+}
+
+.projects-heading {
+  font-size: 65px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+/* .projects-container {
+  width: 1300px;
+  height: 1200px;
+  display: grid;
+  grid-template-columns: repeat(3, 390px);
+  grid-template-rows: min-content;
+  row-gap: 40px;
+  column-gap: 40px;
+  align-items: start;
+} */
+
+.projects-container {
+  width: 100%;
+  max-width: 1300px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 20px;
+  align-content: flex-start;
+}
+
+.card-container .card {
+  width: 390px;
+  height: 210px;
+  flex: 1 1 auto;
+  text-decoration: none;
+}
+
+.card {
+  flex: 1 1 auto;
+  text-decoration: none;
+}
+
+.card-img {
+  width: 390px;
+  height: 210px;
+}
+
+.card-hover {
+  width: 100%;
+  height: 100%;
+  transition: background-color 0.25s ease-in;
+}
+
+.card-hover:hover {
+  background-color: rgba(0, 0, 0, 0.397);
+}
+
+.proj-img1 {
+  background-color: blueviolet;
+}
+.proj-img2 {
+  background-color: palevioletred;
+}
+.proj-img3 {
+  background-color: teal;
+}
+.proj-img4 {
+  background-color: brown;
+}
+.proj-img5 {
+  background-color: goldenrod;
+}
+.proj-img6 {
+  background-color: cornflowerblue;
+}
+
+.card-container {
+  width: 390px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 40px;
+}
+
+.card-title {
+  text-decoration: none;
+  color: white;
+}
+
+.card-title:hover {
+  color: chartreuse;
+}
+
+/* Footer */
+footer {
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  overflow: hidden;
+  font-weight: 500;
+  position: relative;
+  justify-content: center;
+}
+
+.footer-heading {
+  font-size: xx-large;
+}
+
+.footer-container {
+  display: flex;
+  width: 1230px;
+}
+
+.inner-footer {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2em;
+  width: 50%;
+}
+
+span img {
+  width: 20px;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
